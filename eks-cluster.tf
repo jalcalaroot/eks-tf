@@ -1,19 +1,9 @@
-locals {
-  cluster_name = "noprod-eks-inkhealth-${random_string.suffix.result}"
-}
-
-
-resource "random_string" "suffix" {
-  length  = 4
-  special = false
-}
-
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
-  cluster_name    = "k8s-thecloudroot"
+  cluster_name    = local.cluster_name
   cluster_version = "1.22.6"
-  subnets         = ["subnet-09db50623a8f31326", "subnet-0a8128188062b2435", "subnet-059d93a0d3918d586"]
+  subnets         = ["subnet-09db50623a8f31326", "subnet-0a8128188062b2435", "subnet-059d93a0d3918d586" ]
 
   vpc_id = "vpc-09bf547bfdc87e81f"
 
