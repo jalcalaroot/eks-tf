@@ -1,3 +1,8 @@
+locals {
+  cluster_name = "noprod-eks-inkhealth-${random_string.suffix.result}"
+}
+
+
 resource "random_string" "suffix" {
   length  = 4
   special = false
