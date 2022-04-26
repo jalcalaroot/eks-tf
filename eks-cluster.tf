@@ -3,11 +3,6 @@ resource "random_string" "suffix" {
   special = false
 }
 
-module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "3.2.0
-
-
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
