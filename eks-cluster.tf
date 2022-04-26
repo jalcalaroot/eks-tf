@@ -12,10 +12,10 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
   cluster_name    = local.cluster_name
-  cluster_version = "1.22.6"
-  subnets         = module.vpc.private_subnets
+  cluster_version = "1.22.6":
+  subnets         = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef0", "subnet-0123456789abcdef0"]
 
-  vpc_id = module.vpc.vpc_id
+  vpc_id = "vpc-0123456789abcdef0"
 
   workers_group_defaults = {
     root_volume_type = "gp3"
