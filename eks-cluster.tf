@@ -11,7 +11,7 @@ resource "random_string" "suffix" {
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
-  cluster_name    = k8s-thecloudroot
+  cluster_name    = "k8s-thecloudroot"
   cluster_version = "1.22.6"
   subnets         = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef0", "subnet-0123456789abcdef0"]
 
